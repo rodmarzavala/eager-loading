@@ -19,8 +19,6 @@ class PostController extends AbstractController
         $posts = $entityManager
             ->getRepository(Post::class)
             ->createQueryBuilder('p')
-            ->innerJoin('p.user', 'u')
-            ->addSelect('u')
             ->getQuery()
             ->getResult();
 
